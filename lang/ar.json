@@ -1,0 +1,24 @@
+{
+    "FlexQuiz": "فليكس كويز",
+    "Home Page": "الصفحة الرئيسية",
+    "Home": "الرئيسية",
+    "Quizzes": "التحديات",
+    "Leaderboard" : "لوحة المتصدرين",
+    "About Us" : "من نحن",
+    "Contact Us" : "تواصل معنا",
+    "Login": "دخول",
+    "Register": "تسجيل",
+    "Logout": "خروج",
+    "Name": "الإسم",
+    "Email": "البريد الإلكتروني" ,
+    "Message": "الرسالة" ,
+    "Send" : "إرسال",
+    "Password" : "كلمة السر",
+    "Remember Me" : "تذكرني",
+    "Forgot Your Password?" : "نسيت كلمة السر ?",
+    "All Right Reserved By FlexQuiz" : "كل الحقوق محفوظة فليكس كويز",
+    "English" : "إنجليزي",
+    "Arabic" : "عربي",
+    "Languages" : "اللغات"
+
+}
