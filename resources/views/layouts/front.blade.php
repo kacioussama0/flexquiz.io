@@ -5,6 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="{{asset('imgs/logo.svg')}}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -33,7 +34,7 @@
 
     <header class="">
 
-        <nav class="navbar navbar-expand-lg p-0 bg-secondary  ">
+        <nav class="navbar navbar-expand-lg p-0 bg-secondary border-3 shadow border-bottom border-primary ">
             <div class="container-fluid py-1">
                 <a class="navbar-brand me-0 ms-3" href="{{url('/')}}">
                     <img src="{{asset('imgs/logo.svg')}}" alt="" class="logo-img">
@@ -49,6 +50,14 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#"><i class="fa fa-question ms-2"></i> {{__('Quizzes')}}</a>
                         </li>
+
+
+                        @auth
+                            <li class="nav-item">
+                                <a class="nav-link " href=""><i class="fa fa-list ms-2 "></i>{{__('Leaderboard')}}</a>
+                            </li>
+                        @endauth
+
 
                         <li class="nav-item">
                             <a class="nav-link" href="#"><i class="fa fa-users ms-2"></i> {{__('About Us')}}</a>
@@ -68,13 +77,6 @@
                                 <li><a class="dropdown-item" href="{{route('arabic')}}">{{__('Arabic')}}</a></li>
                             </ul>
                         </li>
-
-
-                        @auth
-                            <li class="nav-item">
-                                <a class="nav-link " href=""><i class="fa fa-list ms-2 "></i>{{__('Leaderboard')}}</a>
-                            </li>
-                        @endauth
 
 
 
@@ -136,7 +138,7 @@
 
 
 
-
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
 <script src="{{asset('js/app.js')}}"></script>

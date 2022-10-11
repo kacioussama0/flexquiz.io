@@ -1,9 +1,9 @@
 @extends('layouts.front')
-
+@section('title',__('Login'))
 @section('content')
-<div class="container py-5" style="height: 100vh !important;">
+<div class="container py-5 d-flex align-items-center justify-content-center" style="height: 100vh !important;">
     <div class="row justify-content-center align-items-center">
-        <div class="col-md-8 ">
+        <div>
             <div class="card h-100">
                 <h1 class="card-header bg-primary text-light text-center">{{ __('Login') }}</h1>
 
@@ -36,6 +36,12 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+
+                                @if (Route::has('password.request'))
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        {{ __('Forgot Your Password?') }}
+                                    </a>
+                                @endif
                             </div>
                         </div>
 
@@ -51,18 +57,11 @@
                             </div>
                         </div>
 
-                        <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+
+                                <button type="submit" class="btn btn-secondary text-white w-100">
                                     {{ __('Login') }}
                                 </button>
 
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
                         </div>
                     </form>
                 </div>

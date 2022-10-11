@@ -15,6 +15,8 @@ Route::post('/contact-us',[\App\Http\Controllers\ContactController::class,'store
 
 Auth::routes();
 
+
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/arabic', [\App\Http\Controllers\LanguagesController::class, 'arabic'])->name('arabic');
