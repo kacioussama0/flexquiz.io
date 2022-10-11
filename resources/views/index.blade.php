@@ -5,10 +5,13 @@
 
 @section('content')
 
-<div class="container">
+
+    <div class="container">
+
+        <!-- Start Landing Page -->
 
 
-    <div class="row align-items-center py-5">
+        <div class="row align-items-center py-5">
 
         <div class="col-md-6 col-12 text-center">
              <h1 class="display-1 mb-4 fw-bold text-primary">تحديات رائعة</h1>
@@ -24,7 +27,11 @@
 
     </div>
 
+<!-- End Landing Page -->
 
+
+
+<!-- Start Features -->
 
     <section class="py-5">
 
@@ -53,7 +60,7 @@
                     <div class="card-body text-center">
                         <h3 class="display-6 fw-semibold mb-3 text-">تصميم مميز</h3>
                         <i class="fa fa-palette mb-3" style="font-size: 40px"></i>
-                        <p>تصميم راح يخليك ما تخرج من الموقغ</p>
+                        <p>تصميم راح يخليك ما تخرج من الموقع</p>
                     </div>
                 </div>
 
@@ -77,7 +84,7 @@
 
 
     </section>
-
+        <!-- End Features -->
 </div>
 
 
