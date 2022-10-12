@@ -52,6 +52,8 @@ a.nav-link {
     transition: 0.3s;
 }
 
+
+
 a.nav-link:hover {
     color: #F0E1B1 !important;
 }
@@ -68,6 +70,10 @@ a.nav-link:hover {
     font-size: 30px;
 }
 
+
+.active {
+    color: #F0E1B1 !important;
+}
 
 @media(max-width: 768px) {
     .navbar-collapse ul li{

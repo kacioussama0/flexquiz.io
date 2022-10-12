@@ -45,7 +45,7 @@
                 <div class="collapse navbar-collapse mt-lg-0 mt-md-3" id="navbarSupportedContent">
                     <ul class="navbar-nav mb-2 p-0 mb-lg-0 w-100">
                         <li class="nav-item text-light">
-                            <a class="nav-link active " aria-current="page" href="{{url('/')}}"> <i class="fa fa-home ms-2"></i>{{__('Home')}}</a>
+                            <a class="nav-link active" aria-current="page" href="{{url('/')}}"> <i class="fa fa-home ms-2"></i>{{__('Home')}}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"><i class="fa fa-question ms-2"></i> {{__('Quizzes')}}</a>

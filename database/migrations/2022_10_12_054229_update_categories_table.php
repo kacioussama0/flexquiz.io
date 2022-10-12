@@ -13,14 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('points', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')
-                ->on('users')->cascadeOnDelete()->cascadeOnUpdate();
-            $table->unsignedBigInteger('points');
+        Schema::table('categories', function (Blueprint $table) {
 
-            $table->timestamps();
         });
     }
 
@@ -31,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('points');
+        Schema::table('categoriesc', function (Blueprint $table) {
+            //
+        });
     }
 };
