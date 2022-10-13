@@ -2,19 +2,32 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Quiz;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\Rules\File;
 
 class QuizController extends Controller
 {
+
+
+    public function  __construct()
+    {
+         $this -> middleware('auth');
+    }
+
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Quiz $quiz)
     {
-        //
+        $quizzes = $quiz -> all();
+        return view('quizzes.index',compact('quizzes'));
     }
 
     /**
@@ -22,9 +35,10 @@ class QuizController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Quiz $quiz)
     {
-        //
+        $categories = Category::select(['id','title'])->get();
+        return view('quizzes.create',compact('categories'));
     }
 
     /**
@@ -35,7 +49,25 @@ class QuizController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request -> validate([
+            'title'=>'required | min:3 | max: 50',
+            'image' => [
+                'required',
+                File::types(['jpg','png','svg'])
+            ]
+        ]);
+
+        $FILE = $request->file('image')->store('public/quizzes');
+
+
+        if($FILE) {
+            $fileName = explode('/',$FILE)[2];
+            Quiz::create(['title'=>$request->title,'image' => $fileName,'category_id' => $request -> categories,'user_id'=>Auth::id()]);
+        }
+
+        return redirect()->to('quizzes');
+
+
     }
 
     /**
@@ -57,7 +89,12 @@ class QuizController extends Controller
      */
     public function edit(Quiz $quiz)
     {
-        //
+        $item = [
+            'id' => $quiz->id,
+            'title' => $quiz->title,
+            'image' => $quiz->image,
+        ];
+        return view('quizzes.edit',['quiz'=> $item]);
     }
 
     /**
@@ -69,7 +106,38 @@ class QuizController extends Controller
      */
     public function update(Request $request, Quiz $quiz)
     {
-        //
+        $request -> validate([
+            'title'=>'required | min:3 | max: 50',
+            'image' => [
+                File::types(['jpg','png','svg'])
+            ]
+        ]);
+
+
+
+        if($request -> title  != old('title')) {
+            $quiz -> update(['title'=> $request->title]);
+        }
+
+        if($request -> file('image') != null) {
+
+            Storage::disk('public')->delete('quizzes/' . $quiz->image);
+            $FILE = $request->file('image')->store('public/quizzes');
+
+
+
+            if($FILE) {
+                $fileName = explode('/', $FILE)[2];
+                $quiz -> update([
+                    'image' => $fileName
+                ]);
+            }
+
+        }
+
+
+
+        return redirect() -> back();
     }
 
     /**
@@ -80,6 +148,8 @@ class QuizController extends Controller
      */
     public function destroy(Quiz $quiz)
     {
-        //
+        $quiz -> delete();
+        return redirect()->back();
+
     }
 }

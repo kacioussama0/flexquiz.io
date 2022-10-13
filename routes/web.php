@@ -27,3 +27,6 @@ Route::get('/logout',function () {
     Auth::logout();
     return redirect('/');
 });
+
+Route::resource('categories',\App\Http\Controllers\CategoryController::class);
+Route::resource('quizzes',\App\Http\Controllers\QuizController::class);

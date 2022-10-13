@@ -4,7 +4,7 @@
 <div class="container py-5 d-flex align-items-center justify-content-center" style="height: 100vh !important;">
     <div class="row justify-content-center align-items-center">
         <div>
-            <div class="card h-100">
+            <div class="card h-100 w-100">
                 <h1 class="card-header bg-primary text-light text-center">{{ __('Login') }}</h1>
 
                 <div class="card-body">
