@@ -10,7 +10,9 @@
         @section('form-title',__('Contact Us'))
 
         @section('fields')
+            <form action="" method="POST">
 
+                @csrf
 
             <div class="form-group mb-3">
                 <label for="name" class="form-label">{{__('Name')}}</label>
@@ -37,6 +39,8 @@
             </div>
 
             <button type="submit" class="btn btn-secondary text-white w-100">{{__('Send')}}</button>
+
+            </form>
         @endsection
 
         @include('layouts.card')

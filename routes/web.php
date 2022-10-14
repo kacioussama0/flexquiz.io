@@ -11,6 +11,8 @@ Route::get('/',function () {
 
 Route::get('/contact-us',[\App\Http\Controllers\ContactController::class,'index'])->name('contact');
 Route::post('/contact-us',[\App\Http\Controllers\ContactController::class,'store'])->name('contact');
+Route::get('/messages',[\App\Http\Controllers\ContactController::class,'allMessages'])->name('messages ');
+Route::delete('messages/{id}',[\App\Http\Controllers\ContactController::class,'deleteMessage'])->name('messages/delete');
 
 
 Auth::routes();

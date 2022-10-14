@@ -29,4 +29,16 @@ class ContactController extends Controller
 
 
     }
+
+    public function  allMessages(Message $message) {
+        $messages = $message -> select(['id','name','email','message'])->get();
+        return view('messages',compact('messages'));
+    }
+
+
+    public  function  deleteMessage($id) {
+        Message::find($id)->delete();
+        return redirect()->to('messages');
+    }
+
 }
