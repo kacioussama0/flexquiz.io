@@ -10,6 +10,16 @@
 
         <h1 class="display-1 fw-bold text-center text-primary">{{__('Messages')}}</h1>
         @if(count($messages))
+
+            <form action="{{route('messages/delete-all')}}" method="POST" onsubmit="return confirm('Are You Sure !')">
+                @csrf
+                @method('DELETE')
+
+                <button type="submit"  class="btn btn-danger btn-lg mb-3" >{{__('Delete All Messages')}}</button>
+
+
+            </form>
+
         <div class="table-responsive">
         <table class="table table-striped">
 

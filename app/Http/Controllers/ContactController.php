@@ -41,4 +41,11 @@ class ContactController extends Controller
         return redirect()->to('messages');
     }
 
+    public  function  deleteAllMessage() {
+
+        Message::truncate();
+        return redirect()-> back();
+    }
+
+
 }

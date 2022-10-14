@@ -13,6 +13,7 @@ Route::get('/contact-us',[\App\Http\Controllers\ContactController::class,'index'
 Route::post('/contact-us',[\App\Http\Controllers\ContactController::class,'store'])->name('contact');
 Route::get('/messages',[\App\Http\Controllers\ContactController::class,'allMessages'])->name('messages ');
 Route::delete('messages/{id}',[\App\Http\Controllers\ContactController::class,'deleteMessage'])->name('messages/delete');
+Route::delete('messages',[\App\Http\Controllers\ContactController::class,'deleteAllMessage'])->name('messages/delete-all');
 
 
 Auth::routes();
