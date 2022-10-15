@@ -24,6 +24,7 @@
                     <th>{{__('Title Of Question')}}</th>
                     <th>{{__('Choices')}}</th>
                     <th>{{__('ََAnswer')}}</th>
+                    <th>{{__('Point')}}</th>
                     <th>{{__('Actions')}}</th>
 
                 </tr>
@@ -47,6 +48,7 @@
                     </ol>
                 </td>
                 <td>{{$question['answer']}}</td>
+                <td>{{$question['point']}}</td>
                 <td>
                     <a href="{{route('questions.edit',$question['id'])}}" class=" ms-2 btn btn-warning">{{__('Edit')}}</a>
                     <form action="{{route('questions.destroy',$question['id'])}}" method="POST"  onsubmit="return confirm('Are You Sure ?')" class="d-inline-block">

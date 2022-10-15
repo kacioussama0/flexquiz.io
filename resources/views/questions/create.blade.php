@@ -42,13 +42,26 @@
                         @endfor
                     </div>
 
-                    <div class="form-group">
-                        <label for="answer" class="form-label">{{__('ََAnswer')}}</label>
-                        <input type="text" name="answer" class="form-control @error('answer') is-invalid @enderror" value = "{{old('answer')}}">
-                        @error('answer')
+                    <div class="row">
+
+                        <div class="form-group col-md-6 col-12">
+                            <label for="answer" class="form-label">{{__('ََAnswer')}}</label>
+                            <input type="text" name="answer" class="form-control @error('answer') is-invalid @enderror" value = "{{old('answer')}}">
+                            @error('answer')
                             <span class="text-danger">{{$message}}</span>
-                        @enderror
+                            @enderror
+                        </div>
+
+                        <div class="form-group col-md-6 col-12">
+                            <label for="point" class="form-label">{{__('Point')}}</label>
+                            <input type="number" min="1" max="10" name="point" class="form-control @error('point') is-invalid @enderror" value = "{{old('point','1')}}">
+                            @error('point')
+                            <span class="text-danger">{{$message}}</span>
+                            @enderror
+                        </div>
+
                     </div>
+
 
                 </div>
 

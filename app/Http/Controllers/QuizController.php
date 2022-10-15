@@ -65,7 +65,7 @@ class QuizController extends Controller
             Quiz::create(['title'=>$request->title,'image' => $fileName,'category_id' => $request -> categories,'user_id'=>Auth::id()]);
         }
 
-        return redirect()->back('categories');
+        return redirect()->back();
 
 
     }

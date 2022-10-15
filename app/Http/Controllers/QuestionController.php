@@ -36,6 +36,7 @@ class QuestionController extends Controller
                 'question-2' => 'required',
                 'question-3' => 'required',
                 'answer'=> 'required',
+                'point' => 'required|min:1|max:10'
 
             ]
         );
@@ -57,11 +58,12 @@ class QuestionController extends Controller
               'title' => $request -> title,
               'answer' => $request -> answer,
               'questions' => json_encode($questions),
-              'user_id' => $user
+              'user_id' => $user,
+              'point' => $request->point
           ]
       );
 
-        return redirect()->back();
+        return redirect()->to("questions/$quiz");
 
 
     }

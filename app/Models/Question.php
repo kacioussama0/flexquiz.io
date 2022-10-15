@@ -12,6 +12,7 @@ class Question extends Model
         'title',
         'questions',
         'answer',
+        'point',
         'user_id'
     ];
 
