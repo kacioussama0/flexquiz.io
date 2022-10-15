@@ -33,3 +33,7 @@ Route::get('/logout',function () {
 
 Route::resource('categories',\App\Http\Controllers\CategoryController::class);
 Route::resource('quizzes',\App\Http\Controllers\QuizController::class);
+Route::get('questions/create/{quiz}',[\App\Http\Controllers\QuestionController::class,'create']);
+Route::post('questions/create/{quiz}',[\App\Http\Controllers\QuestionController::class,'store']);
+Route::get('questions/{quiz}',[\App\Http\Controllers\QuestionController::class,'show'])->name('show-question');
+Route::resource('questions',\App\Http\Controllers\QuestionController::class);

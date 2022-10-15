@@ -5,15 +5,11 @@
 
 @section('content')
 
-    <div class="container py-5" >
+    <div class="container py-5">
 
+        <h1 class="display-1 fw-bold text-center text-primary mb-5">{{__('Quizzes')}}</h1>
 
-        <h1 class="display-1 fw-bold text-center text-primary">{{__('Quizzes')}}</h1>
-
-
-        <a href="{{route('quizzes.create')}}" class="btn btn-lg btn-success mb-5">{{__('Create Quiz')}}</a>
-
-        <div class="row g-3">
+        <div class="row g-4">
 
         @forelse($quizzes as $quiz)
 

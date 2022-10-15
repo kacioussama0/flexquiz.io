@@ -14,6 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('questions', function (Blueprint $table) {
+            $table-> string('title')->after('id');
             $table -> string('answer');
             $table -> unsignedBigInteger('point');
         });
@@ -27,7 +28,9 @@ return new class extends Migration
     public function down()
     {
         Schema::table('questions', function (Blueprint $table) {
-            //
+            $table-> dropColumn('title');
+            $table -> dropColumn('answer');
+            $table -> dropColumn('point');
         });
     }
 };

@@ -12,7 +12,6 @@ use Illuminate\Validation\Rules\File;
 class QuizController extends Controller
 {
 
-
     public function  __construct()
     {
          $this -> middleware('auth');
@@ -57,6 +56,7 @@ class QuizController extends Controller
             ]
         ]);
 
+
         $FILE = $request->file('image')->store('public/quizzes');
 
 
@@ -65,7 +65,7 @@ class QuizController extends Controller
             Quiz::create(['title'=>$request->title,'image' => $fileName,'category_id' => $request -> categories,'user_id'=>Auth::id()]);
         }
 
-        return redirect()->to('quizzes');
+        return redirect()->back('categories');
 
 
     }

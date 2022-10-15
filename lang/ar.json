@@ -22,6 +22,11 @@
     "Arabic" : "عربي",
     "Languages" : "اللغات",
     "Create Categories" : "إنشاء فئة",
-    "Create" : "إنشاء"
+    "Create" : "إنشاء",
+    "Question": "السؤال",
+    "Title Of Question": "عنوان السؤال",
+    "Create Question": "إنشاء سؤال",
+    "Questions": "الأسئلة",
+    "ََAnswer": "الجواب"
 
 }

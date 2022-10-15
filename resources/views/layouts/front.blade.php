@@ -48,13 +48,13 @@
                             <a class="nav-link active" aria-current="page" href="{{url('/')}}"> <i class="fa fa-home ms-2"></i>{{__('Home')}}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-question ms-2"></i> {{__('Quizzes')}}</a>
+                            <a class="nav-link" href="{{route('quizzes.index')}}"><i class="fa fa-question ms-2"></i> {{__('Quizzes')}}</a>
                         </li>
 
 
                         @auth
                             <li class="nav-item">
-                                <a class="nav-link " href=""><i class="fa fa-list ms-2 "></i>{{__('Leaderboard')}}</a>
+                                <a class="nav-link " href=""><i class="fa fa-list ms-2"></i>{{__('Leaderboard')}}</a>
                             </li>
                         @endauth
 

@@ -11,7 +11,10 @@
         <h1 class="display-1 fw-bold text-center text-primary">{{__($category->title)}}</h1>
 
 
-        <a href="{{route('quizzes.create')}}" class="btn btn-lg btn-success mb-5">{{__('Create Quiz')}}</a>
+        <div class="d-flex justify-content-between">
+            <a href="{{route('quizzes.create')}}" class="btn btn-lg btn-success mb-5">{{__('Create Quiz')}}</a>
+            <a href="{{route('categories.index')}}" class="btn btn-lg btn-warning mb-5 ">{{__('Back To Category')}}</a>
+        </div>
 
         <div class="row g-3">
 
@@ -37,6 +40,7 @@
 
                     <div class="card-footer text-center bg-secondary">
                         <a href="{{route('quizzes.edit',$quiz->id)}}" class="btn btn-primary">{{__('Edit')}}</a>
+                        <a href="{{route('show-question',$quiz->id)}}" class="btn btn-success">{{__('Show')}}</a>
 
                         <form action="{{route('quizzes.destroy',$quiz->id)}}" method="POST" class="d-inline-block" onsubmit="return confirm('{{__('Are You Sure ?')}}')">
                             @csrf
